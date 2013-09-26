@@ -17,11 +17,12 @@ echo "<h3>" . $title . "</h3>";
         </fieldset>
         <hr>
         <div class='candidates'>
-            <div class='well createwell'>
+            <div class='panel'>
                 <?php echo $this->Form->button('&times;', array('type' => 'button', 'class' => 'close tiny button right secondary removecandidate')); ?>
             <fieldset>
                 <?php
                 echo $this->Form->input('Candidate.0.name');
+                echo $this->Form->input('Candidate.0.order');
                 echo $this->Form->input('Candidate.0.image_url');
                 echo $this->Form->button('Add image', array('class' => 'uploadfile small', 'type' => 'button'));
                 echo $this->Form->input('Candidate.0.description');

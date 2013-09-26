@@ -85,17 +85,19 @@ $(function(){
 		$(this).next().slideToggle();
 	});
 
-	//code for adding another add candidate form on the quiz creation page
+	//code for adding another add candidate form on the quiz creation
 	var candidateFormCount = 0;
 	$(".addcandidate").click(function(){
 		candidateFormCount = candidateFormCount + 1;
 		//define the form layout
-		var formHtml = '<div class="well createwell"><button type="button" class="close tiny button right secondary removecandidate">&times;</button><fieldset><div class="input text"><label for="Candidate' + candidateFormCount + 'Name">Name</label><input name="data[Candidate][' + candidateFormCount + '][name]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Name"/></div><div class="input text"><label for="Candidate' + candidateFormCount + 'ImageUrl">Image Url</label><input name="data[Candidate][' + candidateFormCount + '][image_url]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'ImageUrl"/></div><button class="uploadfile" type="button">Add image</button><div class="input textarea"><label for="Candidate' + candidateFormCount + 'Description">Description</label><textarea name="data[Candidate][' + candidateFormCount + '][description]" cols="30" rows="6" id="Candidate' + candidateFormCount + 'Description"></textarea></div><div class="input text"><label for="Candidate' + candidateFormCount + 'Url">Url</label><input name="data[Candidate][' + candidateFormCount + '][url]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Url"/></div><div class="input text"><label for="Candidate' + candidateFormCount + 'Inchi">Inchi</label><input name="data[Candidate][' + candidateFormCount + '][inchi]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Inchi"/></div><div class="input text"><label for="Candidate' + candidateFormCount + 'Smiles">Smiles</label><input name="data[Candidate][' + candidateFormCount + '][smiles]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Smiles"/></div></fieldset></div>';
+		var formHtml = '<div class="panel"><button type="button" class="close tiny button right secondary removecandidate">&times;</button><fieldset><div class="input text"><label for="Candidate' + candidateFormCount + 'Name">Name</label><input name="data[Candidate][' + candidateFormCount + '][name]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Name"/></div><div class="input number"><label for="Candidate' + candidateFormCount + 'Order">Order</label><input name="data[Candidate][' + candidateFormCount + '][order]" type="number" id="Candidate' + candidateFormCount + 'Order"></div><div class="input text"><label for="Candidate' + candidateFormCount + 'ImageUrl">Image Url</label><input name="data[Candidate][' + candidateFormCount + '][image_url]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'ImageUrl"/></div><button class="uploadfile" type="button">Add image</button><div class="input textarea"><label for="Candidate' + candidateFormCount + 'Description">Description</label><textarea name="data[Candidate][' + candidateFormCount + '][description]" cols="30" rows="6" id="Candidate' + candidateFormCount + 'Description"></textarea></div><div class="input text"><label for="Candidate' + candidateFormCount + 'Url">Url</label><input name="data[Candidate][' + candidateFormCount + '][url]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Url"/></div><div class="input text"><label for="Candidate' + candidateFormCount + 'Inchi">Inchi</label><input name="data[Candidate][' + candidateFormCount + '][inchi]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Inchi"/></div><div class="input text"><label for="Candidate' + candidateFormCount + 'Smiles">Smiles</label><input name="data[Candidate][' + candidateFormCount + '][smiles]" maxlength="300" type="text" id="Candidate' + candidateFormCount + 'Smiles"/></div></fieldset></div>';
+
 
 		//append to something
 		$(".candidates").append(formHtml);
 
 	});
+	
 
 	$(".commentform").focus(function(){
 		$(this).val('');

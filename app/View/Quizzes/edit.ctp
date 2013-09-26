@@ -15,10 +15,11 @@ echo "<div class='panel'>";
 echo $this->Form->create('Quiz');
 echo $this->Form->input('Quiz.name');
 echo $this->Form->input('Quiz.description');
-echo $this->Form->input('Quiz.start_date', $options);
-echo $this->Form->input('Quiz.finish_date', $options);
+echo $this->Form->input('Quiz.start_date', array('dateFormat' => 'DMY', 'timeFormat' => null, 'separator' => ''));
+echo $this->Form->input('Quiz.finish_date', array('dateFormat' => 'DMY', 'timeFormat' => null, 'separator' => ''));
 echo "</div>";
 echo "<hr>";
+echo "<div class='candidates'>"; //start candidate div
 $candidateindex = 0;
 $candidates = $this->request->data['Candidate'];
 foreach($candidates as $candidate){
@@ -26,6 +27,7 @@ foreach($candidates as $candidate){
 	$prefix = 'Candidate.' . (string)$candidateindex . '.';
 	echo $this->Form->input($prefix . 'id', array('hiddenField' => true));
 	echo $this->Form->input($prefix . 'name');
+	echo $this->Form->input($prefix . 'order');
 	echo $this->Form->input($prefix . 'image_url');
 	echo $this->Form->button('Add image', array('class' => 'uploadfile button small', 'type' => 'button'));
 	echo $this->Form->input($prefix . 'description');
@@ -36,6 +38,11 @@ foreach($candidates as $candidate){
 
 	$candidateindex += 1;
 }
+
+echo "</div>"; //end candidate div
+
+//echo $this->Form->button('Add another candidate', array('type' => 'button', 'class' => 'addsilentcandidate small'));
+
 echo $this->Form->submit('Save changes', array('class' => 'button success right'));
 
 ?>

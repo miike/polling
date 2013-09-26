@@ -50,13 +50,15 @@ class QuizzesController extends AppController {
 						'User'=>array(
 							'fields'=>array('User.id', 'User.username', 'User.url')
 							)
-						)
+						),
+					'order'=>array('Candidate.order ASC')
 					),
 				'User' => array(
 					'fields'=>'User.username'
 					)
-				)
+				),
 
+			
 			)
 		);
 
@@ -262,6 +264,8 @@ class QuizzesController extends AppController {
 
 		if ($this->request->is('post') || $this->request->is('put')){
 			//attempt to save the data
+
+			//pr($this->request->data);
 			$this->Quiz->id = $id;
 
 			$quiz_save = $this->Quiz->save($this->request->data);
@@ -276,7 +280,6 @@ class QuizzesController extends AppController {
 			if ($quiz_save){
 				//pr($this->request->data);
 				$this->Session->setFlash(__('Quiz changes have saved successfully.'));
-				//$this->redirect(array('controller' => 'quizzes', 'action' => 'index'));
 			}
 			else{
 				$this->Session->setFlash(__('Quiz changes failed to save'));
