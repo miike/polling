@@ -109,6 +109,6 @@ CakeLog::config('error', array(
 ));
 
 //set the ink filepicker API key (required for image uploads)
-Configure::write('inkapikey','your-api-key-here');
-Configure::write('mixpanelhash', 'your-mixpanel-hash-here');
+Configure::write('inkapikey','');
+Configure::write('mixpanelhash', '');
 

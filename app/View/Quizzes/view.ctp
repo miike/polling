@@ -22,8 +22,11 @@
 
 
 		
-		echo "<p>" . $quiz['Quiz']['description'] . "</p>";
+		//use the texthelper to format newline (\n) characters correctly
+		//autoParagraph doesn't seem to substitute correctly
+		$desc = str_replace("\\n", "</br>", $quiz['Quiz']['description']);
 
+		echo "<p>" . $desc . "</p>";
 
 
 		

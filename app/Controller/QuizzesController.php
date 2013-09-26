@@ -3,7 +3,7 @@ App::uses('Sanitize', 'Utility');
 
 class QuizzesController extends AppController {
 
-	public $helpers = array('Html', 'Form', 'Js', 'Time');
+	public $helpers = array('Html', 'Form', 'Text', 'Js', 'Time');
 	public $components = array('Session', 'Auth');
 	public $actsAs = array('Containable');
 
