@@ -117,6 +117,9 @@ p{
 	height: 300px;
 }
 
+.qdesc{
+	word-wrap:break-word;
+}
 
 
 

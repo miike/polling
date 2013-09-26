@@ -26,7 +26,7 @@
 		//autoParagraph doesn't seem to substitute correctly
 		$desc = str_replace("\\n", "</br>", $quiz['Quiz']['description']);
 
-		echo "<p>" . $desc . "</p>";
+		echo "<p class='qdesc'>" . $desc . "</p>";
 
 
 		
