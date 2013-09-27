@@ -72,7 +72,7 @@ $(function(){
 		request.fail(function(jqXHR, textStatus) {
 			//alert( "Request failed: " + textStatus + jqXHR.status );
 			if (jqXHR.status == "403"){
-		  		alert('You must be logged in to make a comment.');
+		  		alert('You must be identified to comment, please visit the "Who are you?" page.');
 			}
 		});
 
@@ -155,7 +155,7 @@ $(function(){
 				alert('You have already voted for this candidate.');
 			}
 			else if (msg == "6"){
-				alert('You must be logged in to vote.');
+				alert('You must be identified to vote, please visit the "Who are you?" page.');
 			}
 			else{ //everything is probably okay
 				//roll the status over +1
@@ -167,7 +167,7 @@ $(function(){
 
 		request.fail(function(jqXHR, textStatus) {
 			if (jqXHR.status == "403"){
-				alert('You must be logged in to vote');
+				alert('You must be identified to vote, please visit the "Who are you?" page.');
 			}
 		  	//alert( "Request failed: " + textStatus + jqXHR.status );
 		});
@@ -195,7 +195,7 @@ $(function(){
 
 		request.fail(function(jqXHR, textStatus) {
 			if (jqXHR.status == "403"){
-				alert('You must be logged in to delete your comment');
+				alert('You must be identified to delete a comment, please visit the "Who are you?" page.');
 			}
 		});
 	}

@@ -96,7 +96,7 @@ mixpanel.init(<?php echo '"' . Configure::read('mixpanelhash') . '"'; ?>);</scri
       
       <?php
 		if (!$username){
-			echo "<li>" . $this->Html->link('Log in', array('controller' => 'users', 'action' => 'login')) . "</li>";
+			echo "<li>" . $this->Html->link('Who are you?', array('controller' => 'users', 'action' => 'login')) . "</li>";
 			echo "<li>" . $this->Html->link('Register', array('controller' => 'users', 'action' => 'add')) . "</li>";
 		}
 		else{
@@ -116,7 +116,7 @@ mixpanel.init(<?php echo '"' . Configure::read('mixpanelhash') . '"'; ?>);</scri
       <li class="has-form">
       	<?php
       	if (!$username){
-        	echo $this->Html->link('Log in', array('controller' => 'users', 'action' => 'login'), array('class' => 'button'));
+        	echo $this->Html->link('Who are you?', array('controller' => 'users', 'action' => 'login'), array('class' => 'button'));
         }
         else{
         	echo "<li>" . $this->Html->link('Logout', array('controller'=>'users', 'action'=>'logout'), array('class' => 'button alert')) . "</li>"; 
